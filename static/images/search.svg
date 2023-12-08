@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="28.759" height="30.46" viewBox="0 0 28.759 30.46">
+<svg xmlns="http://www.w3.org/2000/svg" width="25.297" height="26.76" viewBox="0 0 25.297 26.76">
   <g id="Group_1" data-name="Group 1" transform="translate(-813 -356)">
     <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(813 356)" fill="none" stroke="#d0c2ef" stroke-width="3">
-      <ellipse cx="13.5" cy="12.5" rx="13.5" ry="12.5" stroke="none"/>
-      <ellipse cx="13.5" cy="12.5" rx="12" ry="11" fill="none"/>
+      <ellipse cx="12" cy="11" rx="12" ry="11" stroke="none"/>
+      <ellipse cx="12" cy="11" rx="10.5" ry="9.5" fill="none"/>
     </g>
-    <line id="Line_1" data-name="Line 1" x2="7.564" y2="9.076" transform="translate(833.043 376.424)" fill="none" stroke="#d0c2ef" stroke-width="3"/>
+    <line id="Line_1" data-name="Line 1" x2="6.615" y2="7.938" transform="translate(830.53 373.862)" fill="none" stroke="#d0c2ef" stroke-width="3"/>
   </g>
 </svg>

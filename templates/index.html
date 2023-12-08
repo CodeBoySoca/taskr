@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="masthead">
+    <header>
+        <h1 class="logo">TASKR</h1>
+        <nav>
+            <ul>
+              <li><a href="{{ url_for('jobs')}}">Jobs</a></li>  
+              <li><a href="{{ url_for('top_careers')}}">Top careers</a></li> 
+              <li><a href="{{ url_for('employers')}}">For employers</a></li>  
+              <li><a href="#" id="signup">Sign up</a></li>  
+              <li><a href="#" id="login">Log in</a></li>  
+            </ul>
+        </nav>
+    </header>
+    <div id="job-search">
+        <h2>Get job in your area of expertise</h2>
+        <input type="search" name="search" placeholder="Search for job">
+        <p>Look for job opportunities now</p>
+    </div>
+</div>
+<div class="middle-section">
+   <h2>Get prepared with in demand job skills</h2>
+   <div id="middle-flex-container">
+     <div id="training">
+        <img src="{{ url_for('static', filename='images/Image1.png')}}" alt="">
+        <h4>// Training</h4>
+        <p>Don&apos;t get left behind</p>
+        <p>
+            we can help you get the 
+            training necessary to land
+            a job in the top 25 hottest
+            careers
+        </p>
+     </div>
+     <div id="assessment">
+        <img src="{{ url_for('static', filename='images/Image9.png')}}" alt="">
+        <h4>// Job Assessment</h4>
+        <p>See how you stack up</p>
+        <p>
+        our job assessment tool can 
+        help you find if you are the 
+        perfect fit for the companies 
+        needs before you even apply, 
+        saving you time. 
+        </p>
+     </div>
+     <div id="research-career">
+        <img src="{{ url_for('static', filename='images/Image4.png')}}" alt="">
+        <h4>// Research careers</h4>
+        <p>Learn about in demand jobs</p>
+        <p>
+            Read about our well researched
+            top 25 hottest jobs to see if you
+            qualify.    
+        </p>
+     </div>
+   </div>
+</div>
+<div class="bottom-section">
+ <div id="bottom-flex-container">
+    <div class="left-column">
+        <h2>Get the app</h2>
+        <div class="app-button">
+            <img src="{{ url_for('static', filename='images/apple.svg')}}" alt="">
+            <span>DOWNLOAD FOR iOS</span>
+        </div>
+        <div class="app-button">
+            <img src="{{ url_for('static', filename='images/android.svg')}}" alt="">
+            <span>DOWNLOAD FOR ANDROID</span>
+        </div>
+    </div>
+    <div class="right-column">
+        <img src="{{ url_for('static', filename='images/mobilead.png')}}" alt="">
+    </div>
+ </div>
+</div>
+<footer>
+    <p>All rights reserved | 2024</p>
+</footer>
+{% endblock %}

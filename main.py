@@ -1,11 +1,17 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
+from dotenv import load_dotenv
+import os
+import datetime
 
+load_dotenv('.env')
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_URI')
 db = SQLAlchemy(app)
 
+
 class Listings(db.Model):
-    id = db.Column()
+    id = db.Column(db.Integer(), primary_key=True)
     description  = db.Column(db.Text)
     company_id = db.Column(db.Integer(), db.ForeignKey('companies.id'))
     title = db.Column(db.String(150))
@@ -14,17 +20,17 @@ class Listings(db.Model):
     wage = db.Column(db.Integer())
     location = db.Column(db.String(255))
     job_type = db.Column(db.String(150))
-    date_added = db.Column(db.Datetime())
+    date_added = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
 class Applicants(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(255))
     email = db.Column(db.String(255))
     password = db.Column(db.String(150))
-    birthdate = db.Column(db.Datetime)
+    birthdate = db.Column(db.DateTime)
     image = db.Column(db.String(255))
-    resume = db.column(db.String(255))
-    date_added = db.column(db.Datetime())
+    resume = db.Column(db.String(255))
+    date_added = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     title = db.Column(db.String(200))
     state = db.Column(db.String(150))
     city = db.Column(db.String(200))
@@ -34,7 +40,7 @@ class Employer(db.Model):
     name = db.Column(db.String(200))
     email = db.Column(db.String(150))
     password = db.Column(db.String(150))
-    date_added = db.Column(db.Datetime())
+    date_added = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     
 class Companies(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
@@ -46,11 +52,11 @@ class Companies(db.Model):
     zip = db.column(db.String(100))
     image = db.Column(db.String(255))
     employer_id = db.Column(db.ForeignKey('employer.id'))
-    date_added = db.column(db.Datetime())
+    date_added = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
 @app.route('/')
 def homepage():
-    pass
+    return render_template('index.html')
 
 @app.route('/register')
 def register():
@@ -66,7 +72,7 @@ def signin():
 
 @app.route('/top-careers')
 def top_careers():
-    pass
+    return render_template('careers.html')
 
 @app.route('/search')
 def search():
@@ -74,7 +80,11 @@ def search():
 
 @app.route('/jobs')
 def jobs():
-    pass
+    return render_template('jobs.html')
+
+@app.route('/employers')
+def employers():
+    return render_template('employers.html')
 
 @app.route('/account/<account_id>')
 def account():
