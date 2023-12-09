@@ -49,7 +49,7 @@ class Companies(db.Model):
     industry = db.Column(db.String(200))
     address = db.Column(db.String(255))
     city = db.Column(db.String(255))
-    zip = db.column(db.String(100))
+    state = db.column(db.String(150))
     image = db.Column(db.String(255))
     employer_id = db.Column(db.ForeignKey('employer.id'))
     date_added = db.Column(db.DateTime, default=datetime.datetime.utcnow)
@@ -74,13 +74,14 @@ def signin():
 def top_careers():
     return render_template('careers.html')
 
-@app.route('/search')
+@app.route('/search/<job>')
 def search():
     pass
 
 @app.route('/jobs')
 def jobs():
-    return render_template('jobs.html')
+    jobs = Listings.query.all()
+    return render_template('jobs.html', listings=jobs)
 
 @app.route('/employers')
 def employers():
@@ -96,6 +97,10 @@ def profile():
 
 @app.route('/listings/<listing_id>')
 def listings():
+    return render_template('listing.html')
+
+@app.route('/save/listing/<id>')
+def save_listing():
     pass
 
 @app.route('/applicants/<applicant_id>')

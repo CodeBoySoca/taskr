@@ -15,7 +15,7 @@ height: 600px;
 padding: 3%;
 }
 
-.masthead h1 {
+.masthead h1, .global-masthead h1 {
 display: block;
 width: 200px;
 color: #D9F0F8;
@@ -58,7 +58,6 @@ width: 47%;
 height: 50px !important;
 border-radius: 10px;
 margin-bottom: 10px;
-
 }
 
 #job-search input[type='search'] {   
@@ -237,4 +236,105 @@ padding-top: 20px;
 text-align: center;
 color: #D9F0F8;
 font: normal 300 0.8em "massilia", sans-serif;     
+}
+
+
+.global-masthead {
+background: linear-gradient(#5719E2, #5F04A2);
+width: 99%;
+height: 150px;
+padding: 3%;
+}
+
+.global-masthead input {
+width: 30%;
+height: 50px !important;
+border-radius: 10px;
+position: relative;
+top: 55%;
+left: 30%;
+border: none;
+display: block;
+}
+
+.global-masthead input[type='search'] {   
+height: 40px;
+padding: 20px;
+margin-right: 75px !important;
+background: #fafafa url('/static/images/search.svg') center right no-repeat;
+background-position: 500px 10px;
+}
+
+
+.global-masthead input::placeholder {
+padding-left: 5px;
+color: #D0C2EF;
+font: normal 300 1em "menlo", sans-serif;
+}
+
+.listings-container {
+margin: 80px auto 0 auto;
+width: 50%;
+}
+
+.listings-container div {
+margin: 75px 0;
+border-bottom: 1px solid rgba(112,112,122,0.2);
+padding: 0 0 25px 0;
+}
+
+.listings-container h3 {
+color: #5F04A2;
+font: normal 600 1.2em "massilia", sans-serif; 
+letter-spacing: 2px;  
+margin-bottom: 5px;
+}
+
+
+.listings-container p:first-of-type {
+color: #312F2F;
+font: normal 600 1em "massilia", sans-serif;   
+text-decoration: underline;  
+letter-spacing: 1px;  
+margin-bottom: 5px;
+}
+
+.listings-container p {
+color: #312F2F;
+font: normal 300 0.8em "massilia", sans-serif;     
+}
+
+.listings-container ul {
+width: 25%;
+float: right;
+clear: both;
+margin-top: -25px;
+}
+
+.listings-container ul li a img {
+width: 24px;
+height: 24px;
+display: block;
+padding-top: 8px;
+}
+
+
+.listings-container ul li {
+list-style-type: none;
+display: inline-block;
+padding-right: 50px;
+height: 24px;
+}
+
+.apply-link a {
+border: 1px solid #5F04A2;
+display: inline-block;
+width: 70px;
+height: 25px;
+text-align: center;
+line-height: 1.8em !important;
+background: #D9F0F8;
+color: #5F04A2;
+font: normal 300 0.8em "massilia", sans-serif; 
+text-decoration: none; 
 }

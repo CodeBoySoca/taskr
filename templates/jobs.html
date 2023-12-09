@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="global-masthead">
+    <header>
+        <h1 class="logo">TASKR</h1>
+        <nav>
+            <ul>
+              <li><a href="{{ url_for('jobs')}}">Jobs</a></li>  
+              <li><a href="{{ url_for('top_careers')}}">Top careers</a></li> 
+              <li><a href="{{ url_for('employers')}}">For employers</a></li>  
+              <li><a href="#" id="signup">Sign up</a></li>  
+              <li><a href="#" id="login">Log in</a></li>  
+            </ul>
+        </nav>
+    </header>
+    <input type="search" name="search" placeholder="Search for job">
+</div>
+<div class="listings-container">
+   <h3>Search Results</h3>
+   {% for listing in listings %}
+   <div>
+        <h3>{{ listing.title }}</h3>
+        <p>{{ listing.job_type }}</p>
+        <p>Date added {{ listing.date_added.strftime('%m/%d/%Y') }}</p>
+        <ul>
+          <li><a href="{{ url_for('save_listing', id=listing.id)}}"><img src="{{ url_for('static', filename='images/heart-regular.svg')}}" alt=""></a></li>  
+          <li class="apply-link"><a href="{{ url_for('listings', listing_id=listing.id)}}">Apply</a></li>  
+        </ul>
+    </div>
+   {% endfor %}
+</div>    
+{% endblock %}
