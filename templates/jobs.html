@@ -2,7 +2,7 @@
 {% block content %}
 <div class="global-masthead">
     <header>
-        <h1 class="logo">TASKR</h1>
+        <h1 class="logo"><a href="{{ url_for('homepage')}}">TASKR</a></h1>
         <nav>
             <ul>
               <li><a href="{{ url_for('jobs')}}">Jobs</a></li>  
@@ -16,7 +16,7 @@
     <input type="search" name="search" placeholder="Search for job">
 </div>
 <div class="listings-container">
-   <h3>Search Results</h3>
+   <h3>{{ listing_count }} Search Results</h3>
    {% for listing in listings %}
    <div>
         <h3>{{ listing.title }}</h3>

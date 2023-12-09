@@ -81,7 +81,7 @@ def search():
 @app.route('/jobs')
 def jobs():
     jobs = Listings.query.all()
-    return render_template('jobs.html', listings=jobs)
+    return render_template('jobs.html', listings=jobs, listing_count=len(jobs))
 
 @app.route('/employers')
 def employers():
