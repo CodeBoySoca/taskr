@@ -1,9 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>for employers looking for talent we can help you</h2>
-<p>
-    Create an account with us and you will have access to job seekers
-    simply post your job or filter the search results for applicant profiles
-    and you will see a list of possible candidates for your company.
-</p>
+<div class="global-masthead">
+    <header>
+        <h1 class="logo"><a href="{{ url_for('homepage')}}">TASKR</a></h1>
+        <nav>
+            <ul>
+              <li><a href="{{ url_for('jobs')}}">Jobs</a></li>  
+              <li><a href="{{ url_for('top_careers')}}">Top careers</a></li> 
+              <li><a href="{{ url_for('employers')}}">For employers</a></li>  
+              <li><a href="#" id="signup">Sign up</a></li>  
+              <li><a href="#" id="login">Log in</a></li>  
+            </ul>
+        </nav>
+    </header>
+    <input type="search" name="search" placeholder="Search for job">
+</div>
+    <div class="employer-container">
+
+    <h2>For employers looking for talent we can help you</h2>
+    <p>
+        Create an account with us and you will have access to job seekers
+        simply post your job or filter the search results for applicant profiles
+        and you will see a list of possible candidates for your company.
+    </p>
+    <img src="{{ url_for('static', filename='images/lady.png')}}" alt="">
+    <a href="#" id="employer-signup">Sign up to get started</a>
+    </div>
+
 {% endblock %}

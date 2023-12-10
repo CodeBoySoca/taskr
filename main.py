@@ -10,8 +10,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_URI')
 db = SQLAlchemy(app)
 
 
-
-
 class Applicants(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(255))
