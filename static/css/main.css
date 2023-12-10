@@ -166,7 +166,7 @@ width: 40%;
 
 #research-career h4 {
 position: relative;
-top: -100px;
+top: -75px;
 left: 245px;
 }
 
@@ -537,3 +537,37 @@ letter-spacing: 2px;
 margin: 10px 0 20px 0;
 }
     
+
+/* Top careers */
+
+#career-container {
+padding-bottom: 10%;
+}
+
+.careers {
+display: flex;
+flex-direction: row;
+justify-content: space-between;   
+padding: 3%; 
+border-bottom: 1px solid rgba(112,112,122,0.2);
+}
+
+.careers img {
+max-width: 15%;
+height: auto;    
+}
+
+.careers h4 {
+color: #5F04A2;
+font: normal 600 1em "massilia", sans-serif; 
+letter-spacing: 2px;  
+margin: 10px 0 10px 50px;   
+}
+
+.careers p {
+color: #312F2F;
+font: normal 300 0.8em "massilia", sans-serif;  
+line-height: 1.8em; 
+margin-top: 15px;  
+margin-left: 50px; 
+}

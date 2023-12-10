@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="global-masthead">
+    <header>
+        <h1 class="logo"><a href="{{ url_for('homepage')}}">TASKR</a></h1>
+        <nav>
+            <ul>
+              <li><a href="{{ url_for('jobs')}}">Jobs</a></li>  
+              <li><a href="{{ url_for('top_careers')}}">Top careers</a></li> 
+              <li><a href="{{ url_for('employers')}}">For employers</a></li>  
+              <li><a href="#" id="signup">Sign up</a></li>  
+              <li><a href="#" id="login">Log in</a></li>  
+            </ul>
+        </nav>
+    </header>
+    <input type="search" name="search" placeholder="Search for job">
+</div>
+<div class="listing-container">
+  <div id="career-container">
+     <h2>Top 5 careers</h2>
+     <div class="careers">
+        <img src="{{ url_for('static', filename='images/Image6.png')}}" alt="">
+        <div>
+            <h4>Software engineer</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pretium erat a ultrices vehicula. Integer eget laoreet quam, 
+                a elementum felis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc tellus arcu, porttitor eleifend 
+                finibus eget, bibendum ac risus. Duis quis dictum leo, id porttitor tellus   
+            </p> 
+        </div>
+     </div>
+     <div class="careers">
+        <img src="{{ url_for('static', filename='images/Image8.png')}}" alt="">
+        <div>
+            <h4>UX Designer</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pretium erat a ultrices vehicula. Integer eget laoreet quam, 
+                a elementum felis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc tellus arcu, porttitor eleifend 
+                finibus eget, bibendum ac risus. Duis quis dictum leo, id porttitor tellus   
+            </p>            
+        </div>
+
+     </div>
+     <div class="careers">
+        <img src="{{ url_for('static', filename='images/Image5.png')}}" alt="">
+        <div>
+            <h4>Digital Marketer</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pretium erat a ultrices vehicula. Integer eget laoreet quam, 
+                a elementum felis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc tellus arcu, porttitor eleifend 
+                finibus eget, bibendum ac risus. Duis quis dictum leo, id porttitor tellus 
+            </p> 
+        </div>
+     </div>
+     <div class="careers">
+        <img src="{{ url_for('static', filename='images/Image7.png')}}" alt="">
+        <div>
+            <h4>Data Scientist</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pretium erat a ultrices vehicula. Integer eget laoreet quam, 
+                a elementum felis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc tellus arcu, porttitor eleifend 
+                finibus eget, bibendum ac risus. Duis quis dictum leo, id porttitor tellus   
+            </p>  
+        </div>
+     </div>
+     <div class="careers">
+        <img src="{{ url_for('static', filename='images/Image10.png')}}" alt="">
+        <div>
+            <h4>Graphic Designer</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pretium erat a ultrices vehicula. Integer eget laoreet quam, 
+                a elementum felis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc tellus arcu, porttitor eleifend 
+                finibus eget, bibendum ac risus. Duis quis dictum leo, id porttitor tellus   
+            </p>
+        </div>
+     </div>
+  </div>
+
+</div>
+
+{% endblock %}
