@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="global-masthead">
+    <header>
+        <h1 class="logo"><a href="{{ url_for('homepage')}}">TASKR</a></h1>
+        <nav>
+            <ul>
+              <li><a href="{{ url_for('jobs')}}">Jobs</a></li>  
+              <li><a href="{{ url_for('top_careers')}}">Top careers</a></li> 
+              <li><a href="{{ url_for('employers')}}">For employers</a></li>  
+              <li><a href="#" id="signup">Sign up</a></li>  
+              <li><a href="#" id="login">Log in</a></li>  
+            </ul>
+        </nav>
+    </header>
+    <input type="search" name="search" placeholder="Search for job">
+</div>
+<div class="listings-container">
+    <div class="listings-top-container">
+        <h2>{{ listing.title }}</h2>
+        <p>{{ listing.companies.name }}</p>
+        <p>Added {{ listing.date_added.strftime('%m/%d/%Y') }}</p>
+    </div>
+    <div class="listings-top-main-content">
+        <h2>Description</h2>
+        <p>{{ listing.description }}</p>
+        <h4>Requirements</h4>
+        <p>{{ listing.requirements }}</p>
+        <h4>Responsibilities and duties</h4>
+        <p>{{ listing.responsibilities }}</p>
+        <h4>Wage</h4>
+        <p>${{ listing.wage }} hourly</p>
+        <h2>Company details</h2>
+        <p>{{ listing.companies.description }}</p>
+    </div>
+    <a href="{{ url_for('apply', id=listing.id)}}" class="apply-link">Apply for position</a>
+
+</div>
+</div>
+{% endblock %}

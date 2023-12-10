@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <div class="global-masthead">
     <header>
         <h1 class="logo"><a href="{{ url_for('homepage')}}">TASKR</a></h1>
@@ -15,18 +16,19 @@
     </header>
     <input type="search" name="search" placeholder="Search for job">
 </div>
-<div class="listings-container">
-   <h3>{{ listing_count }} Search Results</h3>
-   {% for listing in listings %}
-   <div>
-        <h3>{{ listing.title }}</h3>
-        <p>{{ listing.job_type }}</p>
-        <p>Date added {{ listing.date_added.strftime('%m/%d/%Y') }}</p>
-        <ul>
-          <li><a href="{{ url_for('save_listing', id=listing.id)}}"><img src="{{ url_for('static', filename='images/heart-regular.svg')}}" alt=""></a></li>  
-          <li class="view-listing"><a href="{{ url_for('listings', listing_id=listing.id)}}">View Listing</a></li>  
-        </ul>
-    </div>
-   {% endfor %}
-</div>    
+<div class="listing-container">
+  <div id="application-container">
+    <form method="post">
+        <h2>Apply for position</h2>
+       <input type="text" name="name" placeholder="Name">
+       <input type="email" name="email" placeholder="E-mail">
+       <input type="tel" name="telephone" placeholder="Telephone">
+       <textarea name="message" placeholder="Message(optional)"></textarea>
+       <label id="upload"><input type="file" name="upload-res">Upload your resume</label>
+       <input type="submit" value="Send">
+    </form>
+  </div>
+
+</div>
+
 {% endblock %}

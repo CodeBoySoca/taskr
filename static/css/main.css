@@ -276,72 +276,7 @@ color: #D0C2EF;
 font: normal 300 1em "menlo", sans-serif;
 }
 
-.listings-container {
-margin: 80px auto 0 auto;
-width: 50%;
-}
 
-.listings-container div {
-margin: 75px 0;
-border-bottom: 1px solid rgba(112,112,122,0.2);
-padding: 0 0 25px 0;
-}
-
-.listings-container h3 {
-color: #5F04A2;
-font: normal 600 1.2em "massilia", sans-serif; 
-letter-spacing: 2px;  
-margin-bottom: 5px;
-}
-
-
-.listings-container p:first-of-type {
-color: #312F2F;
-font: normal 600 1em "massilia", sans-serif;   
-text-decoration: underline;  
-letter-spacing: 1px;  
-margin-bottom: 5px;
-}
-
-.listings-container p {
-color: #312F2F;
-font: normal 300 0.8em "massilia", sans-serif;     
-}
-
-.listings-container ul {
-width: 25%;
-float: right;
-clear: both;
-margin-top: -25px;
-}
-
-.listings-container ul li a img {
-width: 24px;
-height: 24px;
-display: block;
-padding-top: 8px;
-}
-
-
-.listings-container ul li {
-list-style-type: none;
-display: inline-block;
-padding-right: 50px;
-height: 24px;
-}
-
-.apply-link a {
-border: 1px solid #5F04A2;
-display: inline-block;
-width: 70px;
-height: 25px;
-text-align: center;
-line-height: 1.8em !important;
-background: #D9F0F8;
-color: #5F04A2;
-font: normal 300 0.8em "massilia", sans-serif; 
-text-decoration: none; 
-}
 
 #overlay {
 width: 100%;
@@ -394,12 +329,17 @@ display: block;
 text-align: center;
 }
 
-.popup input[type='text']::placeholder,
-.popup input[type='email']::placeholder,
-.popup input[type='password']::placeholder
+input[type='text']::placeholder,
+input[type='email']::placeholder,
+input[type='password']::placeholder,
+input[type='tel']::placeholder
 {
 padding-left: 5px;
 }    
+
+textarea::placeholder {
+padding: 10px 0 0 5px;
+}   
 
 
 .popup input[type='text'],
@@ -412,6 +352,7 @@ border: 1px solid #ccc;
 margin-bottom: 20px;
 }
 
+
 .popup input[type='submit'] {
 border: 1px solid #5F04A2;
 width: 100%;
@@ -422,3 +363,177 @@ color: #5F04A2;
 font: normal 300 0.9em "massilia", sans-serif; 
 margin: 5px 0 10px 0;  
 }
+
+/* Listing */
+
+.listings-container {
+margin: 80px auto 0 auto;
+width: 50%;
+}
+
+.listings-container div {
+margin: 75px 0;
+border-bottom: 1px solid rgba(112,112,122,0.2);
+padding: 0 0 25px 0;
+}
+
+.listings-container h3 {
+color: #5F04A2;
+font: normal 600 1.2em "massilia", sans-serif; 
+letter-spacing: 2px;  
+margin-bottom: 5px;
+}
+
+
+.listings-container p:first-of-type {
+color: #312F2F;
+font: normal 600 1em "massilia", sans-serif;   
+text-decoration: underline;  
+letter-spacing: 1px;  
+margin-bottom: 5px;
+}
+
+.listings-container p {
+color: #312F2F;
+font: normal 300 0.8em "massilia", sans-serif;     
+}
+
+.listings-container ul {
+width: 25%;
+float: right;
+clear: both;
+margin-top: -25px;
+}
+
+.listings-container ul li a img {
+width: 24px;
+height: 24px;
+display: block;
+padding-top: 8px;
+}
+
+.listings-container ul li {
+list-style-type: none;
+display: inline-block;
+padding-right: 50px;
+height: 24px;
+}
+
+.apply-link {
+border: 1px solid #5F04A2;
+display: block;
+width: 150px;
+height: 35px;
+text-align: center;
+line-height: 2.8em !important;
+background: #D9F0F8;
+color: #5F04A2;
+font: normal 300 0.8em "massilia", sans-serif; 
+text-decoration: none; 
+margin: -50px auto 75px auto;
+}
+
+.listings-top-main-content {
+margin-top: -30px !important;    
+}
+
+.listings-container h2 {
+color: #5F04A2;
+font: normal 600 1.2em "massilia", sans-serif; 
+letter-spacing: 2px;  
+margin: 10px 0 20px 0;
+}
+
+.listings-container h2:last-of-type {
+margin: 70px 0 20px 0;
+}
+
+.listings-container p {
+color: #312F2F;
+font: normal 300 0.8em "massilia", sans-serif;   
+margin-top: 15px;
+}
+
+.listings-container h4 {
+color: #312F2F;
+font: normal 300 1em "massilia", sans-serif;   
+margin-top: 15px;
+}
+
+
+/* Apply */
+
+.view-listing a{
+border: 1px solid #5F04A2;
+display: inline-block;
+width: 90px;
+height: 25px;
+text-align: center;
+line-height: 1.8em !important;
+background: #D9F0F8;
+color: #5F04A2;
+font: normal 300 0.8em "massilia", sans-serif; 
+text-decoration: none; 
+}
+
+#upload {
+border: 1px solid #5F04A2;
+background: #D9F0F8;
+color: #5719E2;
+font: normal 300 1em "massilia", sans-serif; 
+width: 87%;
+text-align: center;
+cursor: pointer;
+padding: 20px 15px;
+margin: 25px 0;
+display: block;
+}
+
+input[type='file'] {
+display: none; 
+}
+
+#application-container {
+
+}
+
+#application-container input[type='text'],
+#application-container input[type='email'],
+#application-container input[type='tel']
+{
+width: 90%;
+height: 40px;   
+margin-bottom: 25px; 
+border: 1px solid #ccc;
+}
+
+#application-container textarea {
+width: 90%;
+height: 120px; 
+border: 1px solid #ccc;
+}
+
+#application-container input[type='submit'] {
+border: 1px solid #5F04A2;
+background: transparent;
+color: #5719E2;
+font: normal 300 1em "massilia", sans-serif; 
+width: 90%;
+height: 60px;
+margin: 0 auto 75px auto;
+text-align: center;
+cursor: pointer;
+}
+
+.listing-container {
+margin: 80px auto 0 auto;
+width: 50%;
+}
+
+.listing-container h2 {
+color: #5F04A2;
+font: normal 600 1.2em "massilia", sans-serif; 
+letter-spacing: 2px;  
+margin: 10px 0 20px 0;
+}
+    

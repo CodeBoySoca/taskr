@@ -10,17 +10,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_URI')
 db = SQLAlchemy(app)
 
 
-class Listings(db.Model):
-    id = db.Column(db.Integer(), primary_key=True)
-    description  = db.Column(db.Text)
-    company_id = db.Column(db.Integer(), db.ForeignKey('companies.id'))
-    title = db.Column(db.String(150))
-    requirements = db.Column(db.Text())
-    responsibilities = db.Column(db.Text())
-    wage = db.Column(db.Integer())
-    location = db.Column(db.String(255))
-    job_type = db.Column(db.String(150))
-    date_added = db.Column(db.DateTime, default=datetime.datetime.utcnow)
+
 
 class Applicants(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
@@ -52,6 +42,20 @@ class Companies(db.Model):
     state = db.column(db.String(150))
     image = db.Column(db.String(255))
     employer_id = db.Column(db.ForeignKey('employer.id'))
+    date_added = db.Column(db.DateTime, default=datetime.datetime.utcnow)
+
+
+class Listings(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    description  = db.Column(db.Text)
+    company_id = db.Column(db.Integer(), db.ForeignKey('companies.id'))
+    companies = db.relationship('Companies', backref="listings", lazy=True)
+    title = db.Column(db.String(150))
+    requirements = db.Column(db.Text())
+    responsibilities = db.Column(db.Text())
+    wage = db.Column(db.Integer())
+    location = db.Column(db.String(255))
+    job_type = db.Column(db.String(150))
     date_added = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
 @app.route('/')
@@ -96,8 +100,15 @@ def profile():
     pass
 
 @app.route('/listings/<listing_id>')
-def listings():
-    return render_template('listing.html')
+def listings(listing_id):
+    listing = Listings.query.get(listing_id)
+    return render_template('listing.html', listing=listing)
+
+@app.route('/apply/<id>')
+def apply(id):
+    listing = Listings.query.get(id)
+    return render_template('apply.html', listing=listing)
+
 
 @app.route('/save/listing/<id>')
 def save_listing():
