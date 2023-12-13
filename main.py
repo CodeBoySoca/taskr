@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
+from flask_wtf.csrf import CSRFProtect
 from dotenv import load_dotenv
 import os
 import datetime
@@ -8,6 +9,7 @@ load_dotenv('.env')
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_URI')
 db = SQLAlchemy(app)
+csrf = CSRFProtect(app)
 
 
 class Applicants(db.Model):
@@ -72,29 +74,33 @@ def logout():
 def signin():
     pass
 
-@app.route('/top-careers')
-def top_careers():
-    return render_template('careers.html')
-
-@app.route('/search/<job>')
-def search():
-    pass
-
 @app.route('/jobs')
 def jobs():
     jobs = Listings.query.all()
     return render_template('jobs.html', listings=jobs, listing_count=len(jobs))
 
+@app.route('/top-careers')
+def top_careers():
+    return render_template('careers.html')
+
 @app.route('/employers')
 def employers():
     return render_template('employers.html')
 
-@app.route('/account/<account_id>')
-def account():
+@app.route('/search/<job>')
+def search():
     pass
 
-@app.route('/profile')
+@app.route('/profile/<id>')
 def profile():
+    pass
+
+@app.route('/settings')
+def settings():
+    pass
+
+@app.route('/listing/<id>')
+def save_listing():
     pass
 
 @app.route('/listings/<listing_id>')
@@ -107,17 +113,12 @@ def apply(id):
     listing = Listings.query.get(id)
     return render_template('apply.html', listing=listing)
 
-
-@app.route('/save/listing/<id>')
-def save_listing():
+@app.route('/messages')
+def messages():
     pass
 
-@app.route('/applicants/<applicant_id>')
-def applicants():
-    pass
-
-@app.route('/add/listing')
-def add_listing():
+@app.route('/listing-manager')
+def listing_manager():
     pass
 
 

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="global-masthead">
+    <header>
+        <h1 class="logo"><a href="{{ url_for('homepage')}}">TASKR</a></h1>
+        <nav>
+            <ul>
+              <li><a href="{{ url_for('jobs')}}">Jobs</a></li>  
+              <li><a href="{{ url_for('top_careers')}}">Top careers</a></li> 
+              <li><a href="{{ url_for('employers')}}">For employers</a></li>  
+              <li><a href="#" id="signup">Sign up</a></li>  
+              <li><a href="#" id="login">Log in</a></li>  
+            </ul>
+        </nav>
+    </header>
+    <input type="search" name="search" placeholder="Search for job">
+</div>
+<div class="listings-container">
+    <div class="account-container">
+    <h2>Account</h2>
+    <p>Added your company details</p>
+    <form method="post">
+     <input type="text" name="name" placeholder="Name">
+     <input type="email" name="email" placeholder="E-mail">
+     <input type="text" name="title" placeholder="Title">
+     <input type="text" name="age" placeholder="Age">
+     <input type="password" name="password" placeholder="Change password">
+     <input type="button" value="Change password">
+     <select name="state">
+        <option value="ak">Alaska</option>
+        <option value="al">Alabama</option>
+        <option value="ca">California</option>
+        <option value="wa">Washington</option>
+        <option value="or">Oregon</option>
+        <option value="mt">Montana</option>
+        <option value="wy">Wyoming</option>
+        <option value="nv">Nevada</option>
+        <option value="az">Arizona</option>
+        <option value="nm">New Mexico</option>
+        <option value="tx">Texas</option>
+        <option value="la">Louisiana</option>
+        <option value="ms">Mississippi</option>
+        <option value="ga">Georgia</option>
+        <option value="fl">Florida</option>
+        <option value="tn">Tennessee</option>
+        <option value="ky">Kentucky</option>
+        <option value="mo">Missouri</option>
+        <option value="il">Illinois</option>
+        <option value="in">Indiana</option>
+        <option value="nd">North Dakota</option>
+        <option value="sd">South Dakota</option>
+        <option value="ne">Nebraska</option>
+        <option value="ut">Utah</option>
+        <option value="ok">Oklahoma</option>
+        <option value="ks">Kansas</option>
+        <option value="ny">New York</option>
+        <option value="nj">New Jersey</option>
+        <option value="ia">Iowa</option>
+        <option value="oh">Ohio</option>
+        <option value="pa">Pennsylvania</option>
+        <option value="ri">Rhode Island</option>
+        <option value="me">Maine</option>
+        <option value="nh">New Hampshire</option>
+        <option value="ma">Massachusettes</option>
+        <option value="vt">Vermont</option>
+        <option value="ct">Connecticut</option>
+        <option value="wv">West Virginia</option>
+        <option value="va">Virginia</option>
+        <option value="sc">South Carolina</option>
+        <option value="nc">North Carolina</option>
+        <option value="de">Delaware</option>
+        <option value="md">Maryland</option>
+        <option value="ar">Arkansas</option>
+        <option value="hi">Hawaii</option>
+        <option value="mi">Michigan</option>
+        <option value="wi">Wisconsin</option>
+        <option value="mn">Minnesota</option>
+        <option value="id">Idaho</option>
+     </select>
+     <input type="text" name="city" placeholder="City">
+     <select name="industry">
+        <option value="hospitality">Hospitality</option>
+        <option value="agriculture">Agriculture</option>
+        <option value="technology">Technology</option>
+        <option value="art and design">Art and Design</option>
+        <option value="construction">Construction</option>
+        <option value="sales and marketing">Sales and Marketing</option>
+        <option value="engineering">Engineering</option>
+        <option value="data entry">Data Entry</option>
+        <option value="accounting">Accounting</option>
+        <option value="real estate">Real Estate</option>
+        <option value="paralegal">Paralegal</option>
+        <option value="medical">Medical</option>
+        <option value="law and criminal justice">Law and Criminal Justice</option>
+        <option value="mechanic">Mechanic</option>
+        <option value="electrician">Electrician</option>
+        <option value="pharmaceutical">Pharmaceutical</option>
+        <option value="veterinarian">Veterinarian</option>
+        <option value="culinary">Culinary</option>
+        <option value="banking">Banking</option>
+     </select>
+     <label><input type="file" name="profile-image">Add profile image</label>
+     <label><input type="file" name="upload-resume">Upload resume (pdf  or docx accepted)</label>
+     <input type="submit" value="Save profile">
+    </form>
+    </div>
+  </div>  
+
+
+{% endblock %}
